@@ -27,12 +27,21 @@
  > ordinal logistic regression, support vector machines (SVM), or decision tree-based methods: ordinal random forest or gradient boosting
 
 ### Data finding Notes
-- For the  Null values in some of the columns it would help to leave it blank instead of adding a question mark because when handling big data it would help the scientist faster detect and remove 
+- Question Marks in place of nulls:
+    - Ambiguity: Using a question mark as a placeholder for missing or null values introduces ambiguity in the dataset. It can be unclear whether the question mark represents a missing value, an unknown value, or a valid data entry. This ambiguity can affect the accuracy and reliability of any data analysis performed on the dataset.
+
+    - Data Integrity: Mixing the question mark symbol with actual data values can hinder data integrity. It becomes difficult to distinguish between genuine data entries and the question mark placeholders. This can lead to incorrect data interpretations and analysis results.
+
+    - Data Analysis and Operations: Many data analysis and statistical operations rely on the presence or absence of specific values. Using a question mark as a placeholder can interfere with these operations. For example, for calculations I came across unexpected results or errors when applied to data containing question marks.
+
+    - Data Visualization: Plots, charts, and graphs often require consistent and valid data values to represent the underlying patterns accurately. Including question marks in the dataset may result in misleading or distorted visualizations.
+
+    - Compatibility: Some data analysis tools, libraries, and algorithms may not handle question marks as null values by default. They may treat question marks as valid data points, leading to potential issues in data processing, modeling, or machine learning tasks.
+
 - Age, although it can be a good insight, might not be as practical or ethical to obtain since there is a population that would want to keep that information private.
-- Null values all in LeagueIndex 8
-- A large data gap collected in the lower LeagueIndexes (1-6) compared to the higher (7-8)
-- LeagueIndex below 6 values are a lot smaller than 6 and above
-- Compare "lower ranks"  1-5 with "higher ranks" 6-8
+- Null values all in LeagueIndex 8, would need to eliminate those columns 
+- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. Also, when trying to remove outliers, it removes all rows with index 6 & below showing a large difference for scale.
+- Instead of removing outliers, work with normalizaiton to help with the difference in scale
 
 ### Things to-do
 
@@ -40,6 +49,7 @@
 - Bookmark folder materials
 - Set up Aneconda & jupyter notebook
 - Refresh mind on Python setup
+- Make goals for data findings
 - Research Machine Learning models
 
 

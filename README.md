@@ -37,11 +37,12 @@
     - Data Visualization: Plots, charts, and graphs often require consistent and valid data values to represent the underlying patterns accurately. Including question marks in the dataset may result in misleading or distorted visualizations.
 
     - Compatibility: Some data analysis tools, libraries, and algorithms may not handle question marks as null values by default. They may treat question marks as valid data points, leading to potential issues in data processing, modeling, or machine learning tasks.
+    - Recommend to use standardized approaches, such as representing missing values with NaN (Not a Number) or None 
 
 - Age, although it can be a good insight, might not be as practical or ethical to obtain since there is a population that would want to keep that information private.
 - Null values all in LeagueIndex 8, would need to eliminate those columns 
-- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. Also, when trying to remove outliers, it removes all rows with index 6 & below showing a large difference for scale.
-- Instead of removing outliers, work with normalizaiton to help with the difference in scale
+- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. 
+- Work with normalizaiton to help with the difference in scale among the columns
 
 ### Things to-do
 

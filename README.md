@@ -10,7 +10,7 @@
     - A lot of macros to move around map faster 
 
 - **What is PAC?**
-> Perception Action Cycles (PACs). Actions and attention shifts for a typical StarCraft 2 player. "Most aspects of the PAC become faster with an increase in League."
+    - Perception Action Cycles (PACs). Actions and attention shifts for a typical StarCraft 2 player. "Most aspects of the PAC become faster with an increase in League."
 
 - **How Can I determine the relevance of columns to the target variable (LeagueIndex)?**
     - Columns that have a weak or insignificant correlation may not provide valuable information for predicting the player's rank.
@@ -22,9 +22,9 @@
 - **To what extent does the importance of variables change across levels of skill?**
     Not feasible to collect detailed data from across many levels of experience
 
-- **Appropriate machine learning algorithm for Ordinal Regression?**
+- **Appropriate machine learning algorithm?**
     Classification- Categorise data based on predefined labels (Predicting and identifying categories such as ranks) 
-    ordinal logistic regression, support vector machines (SVM), or decision tree-based methods: ordinal random forest or gradient boosting
+    ordinal logistic regression, support vector machines (SVM), or decision tree-based methods
 
 ### Data finding Notes
 - Question Marks in place of nulls:
@@ -38,11 +38,11 @@
 
     - Compatibility: Some data analysis tools, libraries, and algorithms may not handle question marks as null values by default. They may treat question marks as valid data points, leading to potential issues in data processing, modeling, or machine learning tasks.
     - Recommend to use standardized approaches, such as representing missing values with NaN (Not a Number) or None 
+    - Null values all in LeagueIndex 8, would make the class imbalance worse if we eliminate the rows
 
 - Age, although it can be a good insight, might not be as practical or ethical to obtain since there is a population that would want to keep that information private.
-- Null values all in LeagueIndex 8, would need to eliminate those columns 
-- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. 
-- Work with normalizaiton to help with the difference in scale among the columns
+- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. This can be due to the % of players in each rank
+- There is a scale difference bewteen some of the columns. Work with normalizaiton to help with the difference in scale among the columns
 
 ### Things to-do
 
@@ -59,13 +59,14 @@
 
 2. Transformations?
 
-3. Feature selection: EDA Correlation plot for column selection, heatmap view. Maybe just 2 column plots- like a scatter plot between 2 columns. Selcted features 
+3. Feature selection: EDA Correlation plot for column selection, heatmap view. Maybe just 2 column plots- like a scatter plot between 2 columns. 
 
 4. What model to build?
+Multiclass classification: It is used when there are three or more classes and the data we want to classify belongs exclusively to one of those classes,
 
 5. Model performance
 
-6. Next steps and take aways...
+### Next steps and take aways...
     Although I am not as proficient in Python functions, I have learned and adapted quickly to the situation and found resources necessary to help excel my work. I utilized my skills in UX Design and User research to curate and analyze holistic data. For the future I understand that reproducible code is important to be using it repeatedly. I want to further improve to be able to code more efficiently not for myself but for my team to have a easier time. 
 
 

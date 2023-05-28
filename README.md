@@ -26,6 +26,17 @@
     Classification- Categorise data based on predefined labels (Predicting and identifying categories such as ranks) 
     ordinal logistic regression, support vector machines (SVM), or decision tree-based methods
 
+
+### Things to-do
+
+- Research Starcraft material, to get understanding of features in Data set
+- Bookmark folder materials for references
+- Set up Aneconda & jupyter notebook files and GitHub REPO
+- Refresh mind on EDA steps
+- Make goals for data findings
+- Research Machine Learning models
+
+
 ### Data finding Notes
 - Question Marks in place of nulls:
     - Ambiguity: Using a question mark as a placeholder for missing or null values introduces ambiguity in the dataset. It can be unclear whether the question mark represents a missing value, an unknown value, or a valid data entry. This ambiguity can affect the accuracy and reliability of any data analysis performed on the dataset.
@@ -41,32 +52,32 @@
     - Null values all in LeagueIndex 8, would make the class imbalance worse if we eliminate the rows
 
 - Age, although it can be a good insight, might not be as practical or ethical to obtain since there is a population that would want to keep that information private.
-- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. This can be due to the % of players in each rank
+- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher rows than 7-8. This can be also be due to the % of players in each rank
 - There is a scale difference bewteen some of the columns. Work with normalizaiton to help with the difference in scale among the columns
 
-### Things to-do
 
-- Watch and research Starcraft material, to get understanding of game
-- Bookmark folder materials
-- Set up Aneconda & jupyter notebook
-- Refresh mind on Python setup
-- Make goals for data findings
-- Research Machine Learning models
+### Data Issues & Problem-solving
+1. Object columns have quesiton marks:
+    - Replace or remove
 
+2. Class Imbalance:
+    - Adjust the model weight
+    - Work with SMOTE 
 
-### Data to-do
-1. Data cleaning steps: Summary stats of each column, understand each column, finding & removing outliers, finding patterns
-
-2. Transformations?
-
-3. Feature selection: EDA Correlation plot for column selection, heatmap view. Maybe just 2 column plots- like a scatter plot between 2 columns. 
-
-4. What model to build?
-Multiclass classification: It is used when there are three or more classes and the data we want to classify belongs exclusively to one of those classes,
-
-5. Model performance
+3. Classification Report:
+    - Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples (LeagueIndex 7 & 8).
+    - Go back and check data analysis/cleaning (fix any removals)
 
 ### Next steps and take aways...
-    Although I am not as proficient in Python functions, I have learned and adapted quickly to the situation and found resources necessary to help excel my work. I utilized my skills in UX Design and User research to curate and analyze holistic data. For the future I understand that reproducible code is important to be using it repeatedly. I want to further improve to be able to code more efficiently not for myself but for my team to have a easier time. 
+Although I am not as knowledgable in Machine Learning methods, I know I have the work ethic and strong independent learning to get as far as I can in solving the problem. I utilized my skills in UX Design and User research to better analyze the data and find key information. Although I could not fully solve the accuracy of my model, I have some ideas to help improve it:
+
+- Further examining the outliers. Testing the threshold and type of removal. (IQR, Zscore)
+- Possible normalization method for the scale difference. Although it might be needed, could end up being one way towards a solution
+- Log Transformation: As seen in beginning, there were positively skewed data for some of the features.
+- Testing out RFE to determine feature selections. I am new to this one but found it could be a solution.
+- Possible Training & Testing data handling. I only used the main df all the way down. I could split the Training and testing data earlier on to help better train the model.
+- Further Tuning the model. There are multiple paramaters that could be utilized that I do not know of YET.
+
+In conclusion, I want to further improve to be able to code more effectively not for myself but for my team. Through this internship I hope to further learn, grow and be curious about the work I do!
 
 

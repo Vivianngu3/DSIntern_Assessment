@@ -69,7 +69,7 @@
     - Go back and check data analysis/cleaning (fix any removals)
 
 ### Next steps and take aways...
-Although I am not as knowledgable in Machine Learning methods, I know I have the work ethic and strong independent learning to get as far as I can in solving the problem. I utilized my skills in UX Design and User research to better analyze the data and find key information. Although I could not fully solve the accuracy of my model, I have some ideas to help improve it:
+Although I am not as knowledgable in Machine Learning methods, I know I have the work ethic and strong independent learning to get as far as I can in solving the problem. I utilized my skills in UX Design and User research to better analyze the data and find key information. Although I could not fully get to solve the accuracy of my model, I have some ideas to help improve it:
 
 - Further examining the outliers. Testing the threshold and type of removal. (IQR, Zscore)
 - Possible normalization method for the scale difference. Although it might be needed, could end up being one way towards a solution

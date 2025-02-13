@@ -1,95 +1,50 @@
-# Identify
-What am I trying to solve? What data to I need to collect? 
+# StarCraft Player Ranking Conclusion
 
-**Business Task:** You’re given a dataset of Starcraft player performance data in ranked games. We want to develop a model to predict a player’s rank using the information provided in the dataset. 
-## Questions & Thoughts that I came across
+## 1. Executive Summary
+We analyzed player behavior in Starcraft to predict player ranks using performance data. Our best model achieved ~47-50% accuracy, meaning we can predict ranks with moderate confidence. The findings reveal that reaction speed, actions per minute (APM), and hotkey usage are the most important factors for higher ranks.
+Why This Matters:
+Game Developers: Improve matchmaking by incorporating skill-based performance metrics.
+Players: Understand key skills that contribute to ranking up.
+Coaches & Analysts: Use data-driven insights to refine training programs.
 
-- **What is Starcraft?**
-Being someone who is not knowledgeable about the game, I needed to do some background research in order to have a better understanding of my stakeholder and terminology I would be handling.
-
-    - The game revolves around gathering resources, building bases, training armies, and engaging in battles against other players or AI opponents. 
-    - Resources around the map
-    - Increase money and resources to build bases & units
-    - A lot of macros to move around map faster 
-
-- **What is PAC?**
-    - Perception Action Cycles (PACs). Actions and attention shifts for a typical StarCraft 2 player. "Most aspects of the PAC become faster with an increase in League."
-
-- **How Can I determine the relevance of columns to the target variable (LeagueIndex)?**
-    - Columns that have a weak or insignificant correlation may not provide valuable information for predicting the player's rank.
-    - Removing Redundant or highly correlated information helps simplify the model and reduces the risk of overfitting. 
-    - Practicality and feasibility. If a column represents information that is difficult or costly to obtain, it may not be practical to include it in the model.
-    - Domain Knowledge: Use research
-
-- **To what extent does the importance of variables change across levels of skill?**
-    Not feasible to collect detailed data from across many levels of experience
-
-- **Appropriate machine learning algorithm for prediction?**
-    Classification- Categorise data based on predefined labels (Predicting and identifying categories such as ranks) 
-    ordinal logistic regression, support vector machines (SVM), or decision tree-based methods
+## 2. Key Insights from the Analysis
+#### What Factors Determine Player Rank?
+**The model identified the top factors that separate high-ranking from low-ranking players:**
+1. Reaction Speed (Action Latency) - Faster responses lead to better performance.
+2. Actions Per Minute (APM) - Players who execute more actions per minute tend to achieve higher ranks.
+3. Hotkey Usage - Effective hotkey management improves strategic control.
+4. Game Experience (Total Hours Played) - More experienced players tend to perform better.
+5. Consistency in Play Actions - Maintaining a steady pattern of actions contributes to ranking up.
 
 
-### Things to-do
-- Research Starcraft material, to get understanding of features in Data set
-- Bookmark folder materials for references
-- Set up Aneconda & jupyter notebook files and GitHub REPO
-- Refresh mind on EDA steps
-- Make goals for data findings
-- Research Machine Learning models
+## Model Performance Summary
 
-# COLLECTING
-The data set I will be using is on Starcraft players
-
-
-# CLEANING
-Creating queries to review the data set and identify any areas to improve in order to prepare for analysis.
-Understanding Missing values or incomplete data to improve the models accuracy.
-If a column has a significant amount of missing data, it would be best to determine how to handle it first instead of completely removing it. 
+| Model Variant | Accuracy | Key Observations |
+|:----------: | :----------: | :----------: |
+| Logistic Regression | ~41.7% | Struggles with mid-level ranks, better for higher ranks. |
+| Random Forest (Default) | ~44.9% | Performs better than Logistic Regression but misses some ranks. |
+| Random Forest (Balanced Data) | ~39.8% | Improved recall for underrepresented ranks but lower overall accuracy. |
+| Random Forest (Feature Selection) | ~41.2% | Better rank balance, slight accuracy drop. |
+| Random Forest (Tuned) | 47-50% | Best-performing model with improved generalization. |
 
 
-### Data finding Notes
-- The use of question Marks in place of nulls:
-    - **Ambiguity:** Using a question mark as a placeholder for missing or null values introduces ambiguity in the dataset. It can be unclear whether the question mark represents a missing value, an unknown value, or a valid data entry. This ambiguity can affect the accuracy and reliability of any data analysis performed on the dataset.
+## 3. Key Takeaways for Stakeholders
+For Game Developers
+Improve matchmaking by incorporating key skill-based metrics into ranking algorithms. Consider rewarding players who demonstrate strong reaction speed and strategic control.
+For Players
+Prioritize improving APM, reaction time, and hotkey efficiency to climb ranks. Experience matters, but strategic play is more important than total hours played.
+Based on these findings, players looking to improve their rank should focus on:
+Increasing APM: Train with practice drills to improve the speed of actions.
+Exploring the Map More: Make scouting a habit to gain strategic advantages.
+Using the Minimap Effectively: Learn to attack and issue commands via the minimap.
+Mastering Hotkeys: Assign critical commands to hotkeys for faster execution.
+Reducing Action Latency: Practice fluid gameplay to minimize delays between actions.
+For Coaches & Analysts
+Focus on training techniques that enhance reaction speed and decision-making. Use data-driven performance tracking to monitor player progress.
 
-    - **Data Integrity:** Mixing the question mark symbol with actual data values can hinder data integrity. It becomes difficult to distinguish between genuine data entries and the question mark placeholders. This can lead to incorrect data interpretations and analysis results.
-
-    - **Data Analysis and Operations:** Many data analysis and statistical operations rely on the presence or absence of specific values. Using a question mark as a placeholder can interfere with these operations. For example, for calculations I came across unexpected results or errors when applied to data containing question marks.
-
-    - **Data Visualization:** Plots, charts, and graphs often require consistent and valid data values to represent the underlying patterns accurately. Including question marks in the dataset may result in misleading or distorted visualizations.
-
-    - **Compatibility:** Some data analysis tools, libraries, and algorithms may not handle question marks as null values by default. They may treat question marks as valid data points, leading to potential issues in data processing, modeling, or machine learning tasks.
-    - Recommend to use standardized approaches, such as representing missing values with NaN (Not a Number) or None 
-    - Null values all in LeagueIndex 8, would make the class imbalance worse if we eliminate the rows
-
-- Age, although it could be a criteria/insight, might not be as practical or ethical to obtain since there is a population that would want to keep that information private. In this instance when determining the players rank, there is little significance to gather data on.
-- There is a data LeagueIndex class imbalance. Indexes 1-6 have far higher collection than 7-8. This can be also be due to the % of players in each rank
-- There is a scale difference bewteen some of the columns. We would need to work with normalizaiton to help with the difference in scale among the columns
-
-
-### Data Issues & Problem-solving
-1. Object columns have quesiton marks:
-    - Replace or remove
-
-2. Class Imbalance:
-    - Adjust the model weight
-    - Work with SMOTE 
-
-3. Classification Report:
-    - Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples (LeagueIndex 7 & 8).
-    - Go back and check data analysis/cleaning (fix any removals)
-
-### Next steps and take aways...
-Although I don't have years of experience, I know I have the work ethic and strong independent learning to get as far as I need to go in solving the problem. I utilized the skills that I gained better analyze the data and find key information. 
-
-Although I could not fully get to solve the accuracy of my model, I have some ideas to help improve it:
-
-- Further examining the outliers. Testing the threshold and type of removal. (IQR, Zscore)
-- Possible normalization method for the scale difference. Although it might be needed, could end up being one way towards a solution
-- Log Transformation: As seen in beginning, there were positively skewed data for some of the features.
-- Testing out RFE to determine feature selections. I am new to this one but found it could be a solution.
-- Possible Training & Testing data handling. I only used the main df all the way down. I could split the Training and testing data earlier on to help better train the model.
-- Further Tuning the model. There are multiple paramaters that could be utilized that I do not know of YET.
-
-In conclusion, I want to further improve to be able to code more effectively not for myself but for my team. Through this position I hope to further learn, grow and be curious about the work I do!
-
+## 4. Next Steps & Future Improvements
+Try Advanced Machine Learning Models (XGBoost, Neural Networks) to enhance accuracy. 
+Explore Real-Time In-Game Analysis to provide live coaching insights. 
+Use More Player Data (such as in-game decision-making patterns) for better predictions.
+By leveraging these insights, we can create a more engaging and balanced competitive gaming environment while helping players improve their skills strategically.
 

@@ -1,3 +1,6 @@
+# OVERVIEW
+This is a self-guided practice project aimed at improving and showcasing my skills as a Data Analyst.
+
 # StarCraft Player Ranking Conclusion
 
 ## 1. Executive Summary

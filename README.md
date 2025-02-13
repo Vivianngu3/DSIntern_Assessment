@@ -8,7 +8,7 @@ Players: Understand key skills that contribute to ranking up.
 Coaches & Analysts: Use data-driven insights to refine training programs.
 
 ## 2. Key Insights from the Analysis
-#### What Factors Determine Player Rank?
+### What Factors Determine Player Rank?
 **The model identified the top factors that separate high-ranking from low-ranking players:**
 1. Reaction Speed (Action Latency) - Faster responses lead to better performance.
 2. Actions Per Minute (APM) - Players who execute more actions per minute tend to achieve higher ranks.

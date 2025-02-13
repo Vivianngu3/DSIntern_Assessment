@@ -1,9 +1,19 @@
 # Data Science Intern Assessment
 
+# Identify
+What am I trying to solve? What data to I need to collect? 
+
+**Business Task:** You’re given a dataset of Starcraft player performance data in ranked games. We want
+to develop a model to predict a player’s rank using the information provided in the
+dataset. 
+
+
 
 ## Questions & Thoughts that I came across
 
 - **What is Starcraft?**
+Being someone who is not knowledgeable about the game, I needed to do some background research in order to have a better understanding of my stakeholder and terminology I would be handling.
+
     - Players are commanders leading one of three factions. The game revolves around gathering resources, building bases, training armies, and engaging in battles against other players or AI opponents. 
     - Resources around the map
     - Increase money and resources to build bases & units
@@ -28,13 +38,19 @@
 
 
 ### Things to-do
-
 - Research Starcraft material, to get understanding of features in Data set
 - Bookmark folder materials for references
 - Set up Aneconda & jupyter notebook files and GitHub REPO
 - Refresh mind on EDA steps
 - Make goals for data findings
 - Research Machine Learning models
+
+# COLLECTING
+The data set I will be using is on Starcraft players
+
+
+# CLEANING
+Creating queries to review the data set and identify any areas to improve in order to prepare for analysis.
 
 
 ### Data finding Notes
